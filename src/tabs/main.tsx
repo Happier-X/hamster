@@ -1,4 +1,7 @@
+import { Button } from "@heroui/react"
 import { useEffect, useState } from "react"
+
+import "../style.css"
 
 import { sendToBackground } from "@plasmohq/messaging"
 
@@ -30,6 +33,7 @@ function mainPage() {
         flexDirection: "column",
         padding: 16
       }}>
+      <Button>My Button</Button>
       {bookmarks.map((bookmark) => (
         <div key={bookmark.id}>
           <h2>{bookmark.title}</h2>
