@@ -14,7 +14,7 @@ export default defineManifest({
     },
   },
   background: {
-    service_worker: 'src/background.ts'
+    service_worker: "src/background.ts",
   },
   content_scripts: [
     {
@@ -23,7 +23,6 @@ export default defineManifest({
     },
   ],
   permissions: ["sidePanel", "contentSettings"],
-  host_permissions: ["http://localhost/*"],
   side_panel: {
     default_path: "src/sidepanel/index.html",
   },
