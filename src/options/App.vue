@@ -1,7 +1,8 @@
 <template>
-  <div class="w-screen h-screen bg-background flex flex-col items-center relative overflow-hidden">
-    <Button variant="ghost" size="icon" class="absolute top-4 right-4" @click="handleOpenOptions">
-      <OptionsIcon />
+  <div class="w-screen h-screen bg-background flex flex-col items-center relative">
+    开发中...
+    <!-- <Button variant="ghost" size="icon" class="absolute top-4 right-4" @click="handleOpenSettings">
+      <SettingsIcon />
     </Button>
     <div className="text-4xl font-light text-foreground font-mono pb-4 pt-[15vh]">
       {{ timeString }}
@@ -18,20 +19,22 @@
           <SearchIcon />
         </InputGroupButton>
       </InputGroupAddon>
-    </InputGroup>
+    </InputGroup> -->
+    <!-- <SettingsModal ref="settingsModalRef" /> -->
   </div>
 </template>
 
 <script setup lang="ts">
-import { Button } from '@/components/ui/button';
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupButton,
-  InputGroupInput,
-} from '@/components/ui/input-group';
-import { Settings as OptionsIcon, Search as SearchIcon } from 'lucide-vue-next';
+// import { Button } from '@/components/ui/button';
+// import {
+//   InputGroup,
+//   InputGroupAddon,
+//   InputGroupButton,
+//   InputGroupInput,
+// } from '@/components/ui/input-group';
+// import { Search as SearchIcon, Settings as SettingsIcon } from 'lucide-vue-next';
 import { onMounted, onUnmounted, ref } from 'vue';
+// import SettingsModal from './components/settings/SettingsModal.vue';
 
 // 时间字符串
 const timeString = ref('');
@@ -60,16 +63,16 @@ onUnmounted(() => {
 })
 
 // 查询字符串
-const query = ref('')
+// const query = ref('')
 // 处理搜索
-const handleSearch = () => {
-  window.open(`https://www.google.com/search?q=${query.value}`)
-  query.value = ""
-}
+// const handleSearch = () => {
+//   window.open(`https://www.google.com/search?q=${query.value}`)
+//   query.value = ""
+// }
+// 设置弹窗模板引用
+// const settingsModalRef = useTemplateRef('settingsModalRef')
 // 处理设置按钮点击
-const handleOpenOptions = () => {
-  chrome.tabs.create({
-    url: chrome.runtime.getURL("src/options/index.html"),
-  });
-}
+// const handleOpenSettings = () => {
+//   settingsModalRef.value?.open()
+// }
 </script>
